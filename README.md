@@ -8,10 +8,24 @@ Sentiment Analysis, Machine Learning, Twitter Scraping, Pandas, Workcloud, MySQl
 
 ## Table of Contents
 1. [Methodology](#Methodology)
-2. [Models explored](#Models-explored)
-3. [Challenges and Solutions Explored](#Challenges-and-Solutions-Explored)
-4. [Conclusion](#Conclusion)
+2. [Dataset](#Dataset)
+3. [Database](#Database)
+4. [Conclusion-Findings](#Conclusion-Findings)
 
 ## 1. Methodology <a name="Methodology"></a>
 
-To acquire data for the sentiment analysis project, there was an initial attempt to utilize Twitter's API. However, encountering difficulties in obtaining access, an alternative approach was sought to collect Twitter data without API integration. This was accomplished using the Python package called snscrape. The necessary packages, namely snscrape and pandas, were installed to facilitate the data collection process. Subsequently, a Python script was developed to extract 1000 tweets related to the specified query, focusing exclusively on English language content. The information gathered encompassed user details, user followers, tweet counts per user, retweet counts per user, associated hashtags, tweet dates, user locations (where available), and the actual text of each tweet. To systematically organize and manage the collected data, a MySQL database table was established. The sentiment classification of the tweets was performed using the TextBlob library.
+To acquire data for the sentiment analysis project, there was an initial attempt to utilize Twitter's API. However, encountering difficulties in obtaining access, an alternative approach was sought to collect Twitter data without API integration. This was accomplished using the Python package called snscrape. The necessary packages, namely snscrape and pandas, were installed to facilitate the data collection process.  To systematically organize and manage the collected data, a MySQL database table was established. The sentiment classification of the tweets was performed using the TextBlob library.
+
+## 2. Dataset <a name="Dataset"></a>
+Subsequently, a Python script was developed to extract 1000 tweets related to the specified query, focusing exclusively on English language content. The information gathered encompassed user details, user followers, tweet counts per user, retweet counts per user, associated hashtags, tweet dates, user locations (where available), and the actual text of each tweet.
+
+## 3. Database <a name="Database"></a>
+To systematically organize and manage the collected data, a MySQL database table was established. The sentiment classification of the tweets was performed using the TextBlob library.
+
+## 3. Conclusion-Findings <a name="Conclusion-Findings"></a>
+* 22 tweets (2,2%) were duplicate texts. Those tweets are almost certainly from bots or automated accounts.
+* More than 60% of the tweets are positive even though we think social media is often a place of critique and hate.
+* 690 tweets were mentioning only one athlete, while 277 tweets were mentioning more than one athlete. We can assume that people mainly coming to tweeter to comment positive (as we saw in our graphs) about their favorite athlete.
+* Very little people are giving their location, which we assume is for privacy reasons.
+* About 85% people are using hashtags on their tweets.
+* Even though we set the query to extract the tweets in the span of a month we get our 1000 tweets in less than 24 hours. People are commenting constantly about those athletes.
